@@ -47,10 +47,13 @@ OS_PASSWORD = "XXXX"
 ```
 
   - Generate a public-private key pair. Add the public key to the Openstack Project with some name. Fill the name at *KEYPAIR_NAME*.
-  - Fill the path to the private key file at *PRIVATE_KEY_PATH*
-  - *NETWORK_ID* is the fixed Network ID where you want to put your VMs. *NETWORK_NAME* is the name of that network.
+    Fill the path to the private key file at *PRIVATE_KEY_PATH*
+
+  - *NETWORK_ID* is the fixed Network ID where you want to put your VMs into. *NETWORK_NAME* is the name of that network. It can be obtained using the *Networks* button present on the side bar in Horizon.
+
   - Fill other Openstack Cluster related settings.
-  - Please note that OS_PASSWORD is not your Cisco Cloud Account password. Its an API key that can be generated from the Horizon dashboard.
+
+  - **Please note that OS_PASSWORD is not your Cisco Cloud Account password**. Its an API key that can be generated from the Horizon dashboard.
     1. Open Horizon.
     2. Hover over your username and select 'settings' from the dropdown.
     3. Select 'other' and choose 'Generate API Key'
@@ -81,13 +84,13 @@ Ideally you need to change the following:
   - *source_image* is the ID of the base image that you want to use in these VMs. Recommended is Ubuntu-Trusty.
 
   - *use_floating_ip* must be true if your machine on which you have started the server is outside the cluster fixed network. In that case, *floating_ip_pool* must also be provided; it can be obtained from network topology map in horizon.
-  
-  - Image, Network and Flavour IDs can be obtained using Openstack CLI commands. Before you run any CLI command, source the openstack-rc file for your project. Instructions can be found at: http://docs.openstack.org/user-guide/common/cli_set_environment_variables_using_openstack_rc.html
 
-  > source `<openstack-rc.sh>`
-  > nova image-list
-  > nova flavor-list
-  > neutron net-list
+  - Image, Network and Flavour IDs can be obtained using Openstack CLI commands. Before you run any CLI command, source the openstack-rc file for your project. Instructions can be found at:  <br /> http://docs.openstack.org/user-guide/common/cli_set_environment_variables_using_openstack_rc.html
+
+  > source `<openstack-rc.sh>`  <br /> 
+  > nova image-list  <br /> 
+  > nova flavor-list  <br /> 
+  > neutron net-list  <br /> 
 
   **Please note that *source `<openstack-rc.sh>`* will prompt for your Cloud Account Password. But as we did before, fill in the API key instead.**
 
