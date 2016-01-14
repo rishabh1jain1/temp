@@ -1,11 +1,11 @@
-## Before Installation
+### Before Installation
 
 Please make sure that you have access to the following:
  
  * All the Zeus Ansible Projects needed to deploy the system.
  * An Openstack cluster with at least resources free to launch 16 VMs(each with 4GB RAM, 1 VCPU, 50GB Disk)
 
-## Setup
+### Setup
 
  1. Clone the git repo zeus_deployer.
    > git clone https://github.com/CiscoZeus/zeus_deployer.git
@@ -29,12 +29,23 @@ Please make sure that you have access to the following:
    > sudo apt-get install redis-server
 
  8. Install Packer www.packer.io.
-    Create a directory /usr/local/packer and unzip the package downloaded from www.packer.io there only.
+    **Create a directory /usr/local/packer and unzip the package downloaded from www.packer.io there only.**
 
-## Setting up Zeus_Deployer
+### Setting the variables
   
-  ### Setting up django settings.py
+#### Setting up django settings.py
+```
+OS_AUTH_URL = "https://us-texas-3.cloud.cisco.com:5000/v2.0"
+OS_TENANT_NAME = "zeus-prep-cluster-tx-3"
+NETWORK_ID = "e4d39d7d-b706-4e09-b55e-6484542a84a4"
+NETWORK_NAME = "Zeus-Net"
+KEYPAIR_NAME = "rishabja"
+PRIVATE_KEY_PATH = "~/.ssh/id_rsa"
+FLOATING_IP_POOL = "public-floating-601"
+OS_USERNAME = "rishabja"
+OS_PASSWORD = "0a233a05ab3a436488de76049402d0ae"
+```
 
-    1. 
+    
 
 
