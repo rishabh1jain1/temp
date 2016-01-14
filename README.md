@@ -73,10 +73,15 @@ OS_PASSWORD = "XXXX"
 Ideally you need to change the following:
 
   - *username* and *password* are same as OS_USERNAME and OS_PASSWORD set in the settings.py.
+
   - *networks* is the fixed network id used above in settings.py. 
+
   - *flavor* is the ID of the flavour that you want to use for each Zeus VM that is to be used for deployment. Recommended (GP2-Medium - 4GB RAM, 1 VCPU, 50 GB Disk).
+
   - *source_image* is the ID of the base image that you want to use in these VMs. Recommended is Ubuntu-Trusty.
+
   - *use_floating_ip* must be true if your machine on which you have started the server is outside the cluster fixed network. In that case, *floating_ip_pool* must also be provided; it can be obtained from network topology map in horizon.
+  
   - Image, Network and Flavour IDs can be obtained using Openstack CLI commands. Before you run any CLI command, source the openstack-rc file for your project. Instructions can be found at: http://docs.openstack.org/user-guide/common/cli_set_environment_variables_using_openstack_rc.html
 
   > source `<openstack-rc.sh>`
@@ -84,5 +89,5 @@ Ideally you need to change the following:
   > nova flavor-list
   > neutron net-list
 
-  Please note that source *`<openstack-rc.sh>`* will prompt for your Cloud Account Password. But as we did before, fill in the API key instead.
+  **Please note that *source `<openstack-rc.sh>`* will prompt for your Cloud Account Password. But as we did before, fill in the API key instead.**
 
