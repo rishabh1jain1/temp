@@ -33,7 +33,7 @@ Please make sure that you have access to the following:
 
 ### Setting the variables
   
-#### Setting up django settings.py
+##### 1. Setting up django settings.py
 ```
 OS_AUTH_URL = "https://us-texas-3.cloud.cisco.com:5000/v2.0"
 OS_TENANT_NAME = "zeus-prep-cluster-tx-3"
