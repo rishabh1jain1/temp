@@ -102,15 +102,15 @@ Ideally you need to change the following:
   - You need to start three servers - Django Server, Redis-server and Django_rq server and **keep them running**. You can either use 3 different terminal sessions, or use tmux o nohup.
 
   1. Starting Django server using the command
-  > python manage.py runserver
+    > python manage.py runserver
 
-  This will, by default, start the server at *127.0.0.1:8000*. If you want to start it at the IP address of your machine, use
-  > python manage.py runserver 0.0.0.0:8000
+    This will, by default, start the server at *127.0.0.1:8000*. If you want to start it at the IP address of your machine, use
+    > python manage.py runserver 0.0.0.0:8000
 
   2. Starting Redis Server
 
-  - Start the server using the command, 
-  > redis-server
+    Start the server using the command, 
+    > redis-server
 
   3. Starting Django_rq server
 
@@ -121,7 +121,7 @@ Ideally you need to change the following:
     > source `<openstack-rc.sh>`
 
     3. Start the server using
-     > python manage.py rqworker default
+      > python manage.py rqworker default
 
 Everything should be up and running. 
 
