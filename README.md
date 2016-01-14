@@ -51,7 +51,7 @@ OS_PASSWORD = "XXXX"
 
   - *NETWORK_ID* is the fixed Network ID where you want to put your VMs into. *NETWORK_NAME* is the name of that network. It can be obtained using the *Networks* button present on the side bar in Horizon.
 
-  - Fill other Openstack Cluster related settings.
+  - Fill other Openstack cluster and project related settings - *OS_AUTH_URL* and *OS_TENANT_NAME*. Tenant name is the your cluster project name.
 
   - **Please note that OS_PASSWORD is not your Cisco Cloud Account password**. Its an API key that can be generated from the Horizon dashboard.
     1. Open Horizon.
@@ -108,11 +108,30 @@ Ideally you need to change the following:
   > python manage.py runserver 0.0.0.0:8000
 
  2. Starting Redis Server
+
   > redis-server
 
  3. Starting Django_rq server
 
-   1. Before starting this server, please source the openstack-rc file in this terminal/session. This is needed by Packer. Enter the API key when asked, instead of entering horizon password.
+   1. Please ensure that the redis-server is already running before you start RQ server.
 
-   2. Start the server using
+   2. Before starting this server, please source the openstack-rc file in this terminal/session. This is needed by Packer. Enter the API key when asked, instead of entering horizon password.
+
+   > source `<openstack-rc.sh>`
+
+   3/. Start the server using
      > python manage.py rqworker default
+
+Everything should be up and running. 
+
+### Basic Server Endpoints
+
+- To queue a new deployment, POST the *pipeline.yml* file to 
+  > http://127.0.0.1:8000/deploy.
+
+  This will return the ID assigned to this deployement.
+
+- To check the status of any deployment, send a GET request to
+  > http://128.107.5.149:8000/status/<DEPLOYMENT_ID>
+
+
