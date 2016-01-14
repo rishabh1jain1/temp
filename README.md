@@ -133,6 +133,6 @@ Everything should be up and running.
   This will return the ID assigned to this deployement.
 
 - To check the status of any deployment, send a GET request to
-  > http://128.107.5.149:8000/status/`<DEPLOYMENT_ID>`
+  > http://127.0.0.1:8000/status/DEPLOYMENT_ID
 
 
