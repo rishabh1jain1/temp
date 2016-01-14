@@ -22,7 +22,7 @@ Please make sure that you have access to the following:
  5. Install ansible
    > sudo apt-get install ansible
 
- 6. Create directory to store the pod related files temporarily.
+ 6. Create directory to store the pod related files.
    > mkdir /tmp/deployments
 
  7. Install redis-server
@@ -118,7 +118,7 @@ Ideally you need to change the following:
 
     2. Before starting this server, please source the openstack-rc file in this terminal/session. This is needed by Packer. Enter the API key when asked, instead of entering horizon password.
 
-    > source `<openstack-rc.sh>`
+      > source `<openstack-rc.sh>`
 
     3. Start the server using
       > python manage.py rqworker default
