@@ -42,10 +42,17 @@ NETWORK_NAME = "Zeus-Net"
 KEYPAIR_NAME = "rishabja"
 PRIVATE_KEY_PATH = "~/.ssh/id_rsa"
 FLOATING_IP_POOL = "public-floating-601"
-OS_USERNAME = "rishabja"
-OS_PASSWORD = "0a233a05ab3a436488de76049402d0ae"
+OS_USERNAME = "XXXX"
+OS_PASSWORD = "XXXX"
 ```
 
+  - Generate a public-private key pair. Add the public key to the Openstack Project with some name. Fill the name at *KEYPAIR_NAME.*
+  - Fill the path to the private key file at *PRIVATE_KEY_PATH*
+  - Fill other Openstack related settings.
+  - Please note that OS_PASSWORD is not the Cisco Cloud Account password from the Icehouse version of Openstack. Its an API key that can be generated from the Horizon dashboard.
+    1. Open Horizon.
+    2. Hover over your username and select 'settings' from the dropdown.
+    3. Select 'other' and choose 'Generate API Key'
     
 
 
