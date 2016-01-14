@@ -59,6 +59,9 @@ OS_PASSWORD = "XXXX"
     3. Select 'other' and choose 'Generate API Key'
   
 ##### 2. Setting up Packer variables in *packerfile.json* file.
+
+ - The *packerfile.json* file is present at *zeus_deployer/zeus_deployer/deployer/basejob/*
+
 ```
 "variables": {
       "ssh_username": "ubuntu",
@@ -93,4 +96,6 @@ Ideally you need to change the following:
   > neutron net-list  <br /> 
 
   **Please note that *source `<openstack-rc.sh>`* will prompt for your Cloud Account Password. But as we did before, fill in the API key instead.**
+
+### Starting the Server
 
