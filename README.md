@@ -95,7 +95,24 @@ Ideally you need to change the following:
   > nova flavor-list  <br /> 
   > neutron net-list  <br /> 
 
-  **Please note that *source `<openstack-rc.sh>`* will prompt for your Cloud Account Password. But as we did before, fill in the API key instead.**
+  **Please note that *source `<openstack-rc.sh>`* will prompt for your Cloud Account Password. But as you did before, fill in the API key instead.**
 
 ### Starting the Server
 
+  - You need to start three servers - Django Server, Redis-server and Django_rq server and **keep them running**. You can either use 3 different terminal sessions, or use tmux o nohup.
+
+ 1. Starting Django server
+  > python manage.py runserver
+
+  This will, by default, start the server at *127.0.0.1:8000*. If you want to start it at the IP address of your machine, use
+  > python manage.py runserver 0.0.0.0:8000
+
+ 2. Starting Redis Server
+  > redis-server
+
+ 3. Starting Django_rq server
+
+   1. Before starting this server, please source the openstack-rc file in this terminal/session. This is needed by Packer. Enter the API key when asked, instead of entering horizon password.
+
+   2. Start the server using
+     > python manage.py rqworker default
