@@ -101,25 +101,26 @@ Ideally you need to change the following:
 
   - You need to start three servers - Django Server, Redis-server and Django_rq server and **keep them running**. You can either use 3 different terminal sessions, or use tmux o nohup.
 
- 1. Starting Django server
+  1. Starting Django server using the command
   > python manage.py runserver
 
   This will, by default, start the server at *127.0.0.1:8000*. If you want to start it at the IP address of your machine, use
   > python manage.py runserver 0.0.0.0:8000
 
- 2. Starting Redis Server
+  2. Starting Redis Server
 
+  - Start the server using the command, 
   > redis-server
 
- 3. Starting Django_rq server
+  3. Starting Django_rq server
 
-   1. Please ensure that the redis-server is already running before you start RQ server.
+    1. Please ensure that the redis-server is already running before you start RQ server.
 
-   2. Before starting this server, please source the openstack-rc file in this terminal/session. This is needed by Packer. Enter the API key when asked, instead of entering horizon password.
+    2. Before starting this server, please source the openstack-rc file in this terminal/session. This is needed by Packer. Enter the API key when asked, instead of entering horizon password.
 
-   > source `<openstack-rc.sh>`
+    > source `<openstack-rc.sh>`
 
-   3/. Start the server using
+    3. Start the server using
      > python manage.py rqworker default
 
 Everything should be up and running. 
@@ -132,6 +133,6 @@ Everything should be up and running.
   This will return the ID assigned to this deployement.
 
 - To check the status of any deployment, send a GET request to
-  > http://128.107.5.149:8000/status/<DEPLOYMENT_ID>
+  > http://128.107.5.149:8000/status/`<DEPLOYMENT_ID>`
 
 
